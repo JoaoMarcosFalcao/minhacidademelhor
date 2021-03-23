@@ -14,10 +14,12 @@ public class Pedido implements Serializable {
     private LocalDate dataCriacaoPedido;
     private LocalDate dataUltimaAtualizacao;
     private LocalDate dataConclusao;
+
     @Column(nullable = false)
     private BigDecimal subtotal;
     private BigDecimal total;
     private BigDecimal valorFrete;
+
     @ManyToOne
     private Cliente cliente;
 
@@ -40,7 +42,7 @@ public class Pedido implements Serializable {
         this.dataCriacaoPedido = dataCriacaoPedido;
     }
 
-    public LocalDate getDataUltimaAtualizacao() {
+    public LocalDate getDataUltimaAtualizacao(LocalDate now) {
         return dataUltimaAtualizacao;
     }
 
